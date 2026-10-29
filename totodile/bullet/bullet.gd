@@ -1,14 +1,18 @@
-extends CharacterBody2D
-var speed:float = 200;
-var target:Vector2 = Vector2.ZERO;
+extends Area2D
 
+@export var speed:float = 500;
 var bullet_direction;
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	target = get_viewport().get_mouse_position();
-	pass # Replace with function body.
 
+func _ready() -> void:
+	var timer = get_node("Timer");
+	timer.start();
+	pass;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position -= bullet_direction * speed * delta;
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
+	pass # Replace with function body.

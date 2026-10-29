@@ -5,8 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sq2hu"]
 
-[node name="Bullet" type="CharacterBody2D" unique_id=1804577569]
-collision_layer = 2
+[node name="Bullet" type="Area2D" unique_id=473291209 groups=["bullet"]]
 script = ExtResource("1_6wip1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1796010349]
@@ -16,3 +15,8 @@ texture = ExtResource("1_k2aps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1310906828]
 shape = SubResource("CircleShape2D_sq2hu")
+
+[node name="Timer" type="Timer" parent="." unique_id=912603176]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

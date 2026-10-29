@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://jshdswr5kie"]
 
 [ext_resource type="PackedScene" uid="uid://daro8kbdy7w6j" path="res://player/player.tscn" id="1_c6gwx"]
+[ext_resource type="PackedScene" uid="uid://y4q1h8cic02x" path="res://Enemies/default/default_enemy.tscn" id="3_bcbcq"]
 
 [node name="World" type="Node2D" unique_id=1076675305]
 
 [node name="Character2D" parent="." unique_id=83050432 instance=ExtResource("1_c6gwx")]
+
+[node name="DefaultEnemy" parent="." unique_id=1715082306 instance=ExtResource("3_bcbcq")]
+position = Vector2(965, 106)
